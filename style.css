@@ -35,9 +35,11 @@ header{
     align-items: center;
     padding: 20px;
     background-color:#FDFDFF;
+    position: relative;
    
   
 }
+
 
 
 
@@ -79,6 +81,24 @@ nav ul li a{
 nav ul li a:hover{
     opacity: 0.7;
   
+}
+
+.checkbtn
+{
+position: absolute;
+right: 0;
+top: -5px;
+line-height: 80px;
+font-size: 30px;
+color: #1b1b1b;
+cursor: pointer;
+margin-right: 40px;
+display: none;
+}
+#check
+{
+    display: none;
+    position: absolute;
 }
 
 main{
@@ -262,6 +282,10 @@ main{
     font-weight: 600;
     padding: 2px;
     display: none;
+}
+
+.flex-button a:hover{
+    text-decoration: underline solid 1px #ffffff ;
 }
 
 .flex-content
@@ -750,25 +774,48 @@ font-size: .9em;
 
 @media(max-width:768px)
 {
+    
 
 
     header{
         flex-direction: column;
         text-align: center;
         width: 100%;
-        height: 100vh; 
+    }
+
+    .himg img{
+        display: none;
+    }
+    
+    nav{
+    padding-top: 1em;
+    height: 320px;
+    display: none; 
+       }
+       .checkbtn
+       {
+        display: block;
     }
 
  
     nav ul {
         display: inline-block; 
-        
     }
+ 
+
+    #check:checked ~ nav{
+        display: block;
+    }
+    
+    #check:checked ~ .himg img{
+        display: block;
+    }
+    
 
  
     nav ul li{
         margin: 0;
-        padding: 2em;
+        padding: 1.5em;
     }
 
     nav ul li a{
